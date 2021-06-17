@@ -1,0 +1,25 @@
+body {
+  background: #292c2e;
+}
+
+.page {
+  color: white;
+  font-family: sans-serif;
+  margin: auto;
+  max-width: 500px;
+}
+
+.heading {
+  color: rgb(158, 110, 207);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.nav-link-item {
+  padding-right: 2rem;
+}
+.nav-link-text {
+  color: white;
+}

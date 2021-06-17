@@ -1,12 +1,12 @@
-import * as React from "react"
-import Layout from '../components/layout'
+import * as React from "react";
+import Page from '../components/Page';
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home">
+    <Page pageTitle="Home">
       <p>Still developing this site. Nothing to show here.</p>
-    </Layout>
-  )
-}
+    </Page>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
