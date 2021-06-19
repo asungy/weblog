@@ -1,20 +1,15 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import {
-  navLinks,
-  navLinkItem,
-  navLinkText
-} from './dark.module.css';
 
 const NavigationBar = () => {
   return (
     <nav>
-      <ul className={navLinks}>
-        <li className={navLinkItem}>
-          <Link to="/" className={navLinkText}>Home</Link>
+      <ul className="nav-links">
+        <li className="nav-link-item">
+          <Link to="/" className="nav-link-text">Home</Link>
         </li>
-        <li className={navLinkItem}>
-          <Link to="/about" className={navLinkText}>About</Link>
+        <li className="nav-link-item">
+          <Link to="/about" className="nav-link-text">About</Link>
         </li>
       </ul>
     </nav>

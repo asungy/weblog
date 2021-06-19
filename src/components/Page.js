@@ -1,20 +1,28 @@
-import * as React from 'react';
+// NPM imports
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+
+// Local imports
 import NavigationBar from './NavigationBar';
-import ThemeButton from './ThemeButton';
-import { 
-  page,
-  heading,
-} from './dark.module.css';
+import ThemeButton from '../components/ThemeButton';
+import useDarkMode from '../components/useDarkMode';
+import { GlobalStyles } from '../themes/globalStyles';
+import { lightTheme, darkTheme } from '../themes/lightDarkTheme';
+
 
 const Page = ({ pageTitle, children }) => {
+  const [theme, toggleTheme] = useDarkMode();
+  const themeObj = theme === 'light' ? lightTheme : darkTheme;
+
   return (
-    <main className={page}>
+    <ThemeProvider theme={themeObj}>
+      <GlobalStyles />
+      <ThemeButton theme={theme} toggleFunc={toggleTheme} />
       <title>{pageTitle}</title>
       <NavigationBar />
-      <h1 className={heading}>{pageTitle}</h1>
-      <ThemeButton/>
+      <h1>{pageTitle}</h1>
       {children}
-    </main>
+    </ThemeProvider>
   );
 };
 
