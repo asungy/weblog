@@ -1,3 +1,7 @@
+# NPM directories
 node_modules/
 .cache/
 public
+
+# Personal To-Do List
+TODO.md
