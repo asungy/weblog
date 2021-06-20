@@ -1,23 +1,39 @@
 import { useEffect, useState } from 'react';
 
+function setLocalStorageTheme(theme) {
+  // Check if window is defined (window is undefined during server-side 
+  // rendering build).
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem('theme', theme);
+  }
+}
+
+function getLocalStorageTheme() {
+  // Check if window is defined (window is undefined during server-side 
+  // rendering build).
+  if (typeof window !== "undefined") {
+    return window.localStorage.getItem('theme');
+  }
+}
+
 const useDarkMode = () => {
   // Set theme to previously selected theme. Otherwise, default to light theme
-  const state = window.localStorage.getItem('theme') || 'light';
+  const state = getLocalStorageTheme() || 'light';
   const [theme, setTheme] = useState(state);
 
   // Toggle callback sets the theme in React component and local storage
   const toggleTheme = () => {
     if (theme === 'light') {
-      window.localStorage.setItem('theme', 'dark');
+      setLocalStorageTheme('dark');
       setTheme('dark');
     } else {
-      window.localStorage.setItem('theme', 'light');
+      setLocalStorageTheme('light');
       setTheme('light');
     }
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('theme');
+    const localTheme = getLocalStorageTheme();
     localTheme && setTheme(localTheme);
   }, []);
 
