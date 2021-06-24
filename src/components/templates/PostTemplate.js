@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 
+import Page from '../Page';
+
 export const pageQuery = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
@@ -21,17 +23,18 @@ const MyH1 = (props) => {
   );
 };
 
+// Override default tags with custom components
 const customTags = {
-  h1: MyH1,
 }
 
 const PostTemplate = ({ data }) => {
   return (
     <div>
-      <h1>{data.mdx.frontmatter.title}</h1>
+      <Page pageTitle={data.mdx.frontmatter.title}>
       <MDXProvider components={customTags}>
         <MDXRenderer frontmatter={data.mdx.frontmatter}>{data.mdx.body}</MDXRenderer>
       </MDXProvider>
+      </Page>
     </div>
   );
 };

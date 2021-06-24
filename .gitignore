@@ -2,3 +2,6 @@
 node_modules/
 .cache/
 public
+
+# Personal To-Do list
+TODO.md
