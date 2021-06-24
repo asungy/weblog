@@ -8,7 +8,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
-            slug
+            frontmatter {
+              path
+            }
           }
         }
       }
@@ -25,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create a page for each MDX GraphQL node
   posts.forEach(({ node }, index) => {
     actions.createPage({
-      path: node.slug,
+      path: node.frontmatter.path,
       component: path.resolve('./src/components/templates/PostTemplate.js'),
       context: { id: node.id },
     });
