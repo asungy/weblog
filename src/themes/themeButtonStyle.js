@@ -14,7 +14,7 @@ export const ThemeButtonStyle = styled.button`
   position: relative;
 
   // Size of button
-  width: 4rem;
+  width: 100%;
   height: 2rem;
 
   svg {

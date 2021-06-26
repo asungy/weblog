@@ -17,25 +17,18 @@ export const pageQuery = graphql`
   }
 `;
 
-const MyH1 = (props) => {
-  return (
-    <h1 style={{ color: "tomato" }} {...props} />
-  );
-};
-
 // Override default tags with custom components
+// For more information: https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#components
 const customTags = {
 }
 
 const PostTemplate = ({ data }) => {
   return (
-    <div>
-      <Page pageTitle={data.mdx.frontmatter.title}>
+    <Page pageTitle={data.mdx.frontmatter.title}>
       <MDXProvider components={customTags}>
         <MDXRenderer frontmatter={data.mdx.frontmatter}>{data.mdx.body}</MDXRenderer>
       </MDXProvider>
-      </Page>
-    </div>
+    </Page>
   );
 };
 

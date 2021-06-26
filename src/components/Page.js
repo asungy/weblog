@@ -4,7 +4,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 // Custom components
 import NavigationBar from './NavigationBar';
-import ThemeButton from './ThemeButton';
 
 // Custom hooks
 import useDarkMode from '../hooks/useDarkMode';
@@ -21,15 +20,14 @@ const Page = ({ pageTitle, children }) => {
     <ThemeProvider theme={themeObj}>
       <title>{pageTitle}</title>
       <GlobalStyle />
-      <div style={{display: "flex", flexDirection: "row"}}>
+      <div style={{margin: "0 auto", maxWidth: "700px", width: "90%"}}>
 
-        <div style={{width: "40rem"}}>
-          <NavigationBar />
+        <div>
+          <NavigationBar theme={theme} toggleTheme={toggleTheme}/>
           <h1>{pageTitle}</h1>
           {children}
         </div>
 
-        <ThemeButton theme={theme} toggleFunc={toggleTheme} />
       </div>
     </ThemeProvider>
   );

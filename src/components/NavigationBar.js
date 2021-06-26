@@ -1,18 +1,30 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-const NavigationBar = () => {
+import ThemeButton from './ThemeButton';
+
+const NavigationBar = ({ theme, toggleTheme }) => {
   return (
-    <nav>
-      <ul className="nav-links">
-        <li className="nav-link-item">
-          <Link to="/" className="nav-link-text">Home</Link>
-        </li>
-        <li className="nav-link-item">
-          <Link to="/about" className="nav-link-text">About</Link>
-        </li>
-      </ul>
-    </nav>
+    <div style={{display: "flex"}}>
+
+      <div style={{width: "100%"}}>
+        <nav>
+          <ul className="nav-links">
+            <li className="nav-link-item">
+              <Link to="/" className="nav-link-text">Home</Link>
+            </li>
+            <li className="nav-link-item">
+              <Link to="/about" className="nav-link-text">About</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style={{maxWidth: "60px"}}>
+        <ThemeButton theme={theme} toggleFunc={toggleTheme} />
+      </div>
+
+    </div>
   );
 };
 
