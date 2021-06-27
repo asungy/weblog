@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import Page from '../Page';
 
-export const pageQuery = graphql`
+export const query = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
       id

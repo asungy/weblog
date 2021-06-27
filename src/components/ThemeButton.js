@@ -2,7 +2,7 @@ import React from 'react';
 import { func, string } from 'prop-types';
 import MoonIcon from '../images/icons/moon.svg';
 import SunIcon from '../images/icons/sun.svg';
-import { ThemeButtonStyle } from '../themes/themeButtonStyle';
+import { ThemeButtonStyle } from '../styles/themeButtonStyle';
 
 const ThemeButton = ({ theme, toggleFunc }) => {
   const lightTheme = theme === 'light';

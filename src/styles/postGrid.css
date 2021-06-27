@@ -1,0 +1,22 @@
+.postGrid {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.postCell {
+  border-style: solid;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.postCell:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (min-width: 500px) {
+  .postGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -9,8 +9,8 @@ import NavigationBar from './NavigationBar';
 import useDarkMode from '../hooks/useDarkMode';
 
 // Themes
-import { GlobalStyle } from '../themes/globalStyle';
-import { lightTheme, darkTheme } from '../themes/lightDarkTheme';
+import { GlobalStyle } from '../styles/globalStyle';
+import { lightTheme, darkTheme } from '../styles/lightDarkTheme';
 
 const Page = ({ pageTitle, children }) => {
   const [theme, toggleTheme] = useDarkMode();
@@ -20,7 +20,7 @@ const Page = ({ pageTitle, children }) => {
     <ThemeProvider theme={themeObj}>
       <title>{pageTitle}</title>
       <GlobalStyle />
-      <div style={{margin: "0 auto", maxWidth: "700px", width: "90%"}}>
+      <div style={{margin: "0 auto", maxWidth: "600px", width: "90%"}}>
 
         <NavigationBar theme={theme} toggleTheme={toggleTheme}/>
         <h1>{pageTitle}</h1>

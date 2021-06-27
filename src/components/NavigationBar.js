@@ -10,12 +10,19 @@ const NavigationBar = ({ theme, toggleTheme }) => {
       <div style={{width: "100%"}}>
         <nav>
           <ul className="nav-links">
+
             <li className="nav-link-item">
               <Link to="/" className="nav-link-text">Home</Link>
             </li>
+
             <li className="nav-link-item">
               <Link to="/about" className="nav-link-text">About</Link>
             </li>
+
+            <li>
+              <Link to="/posts" className="nav-link-text">Posts</Link>
+            </li>
+
           </ul>
         </nav>
       </div>
