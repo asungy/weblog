@@ -12,6 +12,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        date
       }
     }
   }
@@ -24,9 +25,19 @@ const customTags = {
 
 const PostTemplate = ({ data }) => {
   return (
-    <Page pageTitle={data.mdx.frontmatter.title}>
+    <Page>
       <MDXProvider components={customTags}>
-        <MDXRenderer frontmatter={data.mdx.frontmatter}>{data.mdx.body}</MDXRenderer>
+
+        {/* Replace default page title with centered on for posts */}
+        <h1 style={{ textAlign: "center" }}>{data.mdx.frontmatter.title}</h1>
+
+        {/* Insert date */}
+        <h4 style={{ textAlign: "right" }}>{data.mdx.frontmatter.date}</h4>
+
+        <MDXRenderer frontmatter={data.mdx.frontmatter}>
+          {data.mdx.body}
+        </MDXRenderer>
+
       </MDXProvider>
     </Page>
   );

@@ -22,11 +22,9 @@ const Page = ({ pageTitle, children }) => {
       <GlobalStyle />
       <div style={{margin: "0 auto", maxWidth: "700px", width: "90%"}}>
 
-        <div>
-          <NavigationBar theme={theme} toggleTheme={toggleTheme}/>
-          <h1>{pageTitle}</h1>
-          {children}
-        </div>
+        <NavigationBar theme={theme} toggleTheme={toggleTheme}/>
+        <h1>{pageTitle}</h1>
+        {children}
 
       </div>
     </ThemeProvider>
