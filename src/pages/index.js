@@ -8,9 +8,13 @@ const IndexPage = () => {
       <br />
       <p>List of To-Do Items:</p>
       <ul>
-        <li>Sort post nodes by date</li>
+        <li>Put posts on home page</li>
+        <li>Write About Page</li>
+        <li>Create known bugs page</li>
+        <li>Set up staging site</li>
         <li>Diagnose theme button rendering issue</li>
-        <li>Diagnose page flashes when loading in dark mode (probably a related issue to the theme button)</li>
+        <li>Diagnose page flashes when loading in dark mode</li>
+        <li>Pagination (won't really matter unless I write a lot)</li>
       </ul>
     </Page>
   );

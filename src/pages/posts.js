@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 import Page from '../components/Page';
 import "../styles/postGrid.css";
+import { createPostObjects } from "../util/date";
 
 export const query = graphql`
   query {
@@ -21,17 +22,17 @@ export const query = graphql`
 `;
 
 const PostsPage = ({ data }) => {
-  const posts = data.allMdx.nodes;
-  const postList = posts.map((node) => 
+  const postObjList = createPostObjects(data.allMdx.nodes);
+  const posts = postObjList.sort((a, b) => b.dateObj - a.dateObj);
+  const postList = posts.map((post) => 
     <div class="postCell">
-      <Link to={node.frontmatter.path}>
-        <h3>{node.frontmatter.title}</h3>
-        <h4>{node.frontmatter.date}</h4>
-        <p>{node.frontmatter.description}</p>
+      <Link to={post.path}>
+        <h3>{post.title}</h3>
+        <h4>{post.dateString}</h4>
+        <p>{post.description}</p>
       </Link>
     </div>
   );
-
   return (
     <Page pageTitle="Posts">
       <div class="postGrid">

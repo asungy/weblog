@@ -6,6 +6,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
 
 import Page from '../Page';
+import { convertDate } from "../../util/date";
 
 // Override <pre> tag to support code syntax highlighting
 const CodeBlock = (props) => {
@@ -62,7 +63,7 @@ const PostTemplate = ({ data }) => {
         <h1 style={{ textAlign: "center" }}>{data.mdx.frontmatter.title}</h1>
 
         {/* Insert date */}
-        <h4 style={{ textAlign: "right" }}>{data.mdx.frontmatter.date}</h4>
+        <h4 style={{ textAlign: "right" }}>{convertDate(data.mdx.frontmatter.date).dateString}</h4>
 
         <MDXRenderer frontmatter={data.mdx.frontmatter}>
           {data.mdx.body}
