@@ -18,7 +18,7 @@ function getLocalStorageTheme() {
 
 const useDarkMode = () => {
   // Set theme to previously selected theme. Otherwise, default to light theme
-  const state = getLocalStorageTheme() || 'light';
+  const state = getLocalStorageTheme() || 'dark';
   const [theme, setTheme] = useState(state);
 
   // Toggle callback sets the theme in React component and local storage
