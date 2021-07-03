@@ -9,7 +9,6 @@ const IndexPage = () => {
       <p>List of To-Do Items:</p>
       <ul>
         <li>Put posts on home page</li>
-        <li>Write About Page</li>
         <li>Create known bugs page</li>
         <li>Diagnose theme button rendering issue</li>
         <li>Diagnose page flashes when loading in dark mode</li>
