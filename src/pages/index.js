@@ -5,13 +5,6 @@ const IndexPage = () => {
   return (
     <Page pageTitle="Home">
       <p>Still developing this site. Don't mind the mess.</p>
-      <br />
-      <p>List of To-Do Items:</p>
-      <ul>
-        <li>Put posts on home page</li>
-        <li>Create known bugs page</li>
-        <li>Pagination (won't really matter unless I write a lot)</li>
-      </ul>
     </Page>
   );
 };
