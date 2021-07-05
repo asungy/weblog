@@ -27,7 +27,7 @@ const NavigationBar = ({ theme, toggleTheme }) => {
         </nav>
       </div>
 
-      <div style={{maxWidth: "60px"}}>
+      <div style={{maxWidth: "2.5rem", display: "flex", alignItems: "center", paddingBottom: "0.5rem"}}>
         <ThemeButton theme={theme} toggleFunc={toggleTheme} />
       </div>
 

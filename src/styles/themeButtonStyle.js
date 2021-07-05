@@ -10,12 +10,12 @@ export const ThemeButtonStyle = styled.button`
   justify-content: space-between;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0.3rem;
+  padding: 0.1rem;
   position: relative;
 
   // Size of button
   width: 100%;
-  height: 2rem;
+  height: 1.25rem;
 
   svg {
     height: auto;

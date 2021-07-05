@@ -12,11 +12,13 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "static": "gatsby build && node server.js"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.13.1",
     "express": "^4.17.1",
     "gatsby": "^3.6.2",
     "gatsby-plugin-image": "^1.7.1",
@@ -24,6 +26,7 @@
     "gatsby-plugin-page-creator": "^3.7.1",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.7.1",
+    "gatsby-plugin-styled-components": "^4.8.0",
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-sharp": "^3.7.1",
     "prism-react-renderer": "^1.2.1",
