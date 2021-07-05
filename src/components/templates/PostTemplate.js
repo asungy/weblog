@@ -56,9 +56,8 @@ const customTags = {
 
 const PostTemplate = ({ data }) => {
   return (
-    <Page>
+    <Page pageTitle={data.mdx.frontmatter.title} hideDefaultTitle={true}>
       <MDXProvider components={customTags}>
-
         {/* Replace default page title with centered on for posts */}
         <h1 style={{ textAlign: "center" }}>{data.mdx.frontmatter.title}</h1>
 
