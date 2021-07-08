@@ -12,7 +12,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       option: {
         rule: {
-          include: `${__dirname}/src/images/icons`
+          include: `${__dirname}/js/images/icons`
         }
       },
     },
@@ -20,7 +20,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/js/images/`,
       },
       __key: "images",
     },
@@ -28,7 +28,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: `${__dirname}/src/pages/`,
+        path: `${__dirname}/js/pages/`,
       },
       __key: "pages",
     },
@@ -36,7 +36,13 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/src/posts/`,
+        path: `${__dirname}/js/posts/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/js/pages`,
       },
     },
   ],
