@@ -5,3 +5,7 @@ public
 
 # Personal To-Do list
 TODO.md
+
+# Added by cargo
+/target
+Cargo.lock
