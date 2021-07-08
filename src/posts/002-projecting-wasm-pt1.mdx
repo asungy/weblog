@@ -1,0 +1,60 @@
+---
+title: "Projecting WASM: Part 1"
+path: /002-projecting-wasm-pt1
+date: 07-08-2021
+description: Possibly getting myself into future trouble
+---
+So I've been thinking about this for a few days and I think I want to create a
+[Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) simulation
+on the home page. I've always been fascinated by this little toy simulation and
+love the idea of being greeted by it every time I visit the site. And it has to
+be written in Rust and compiled to WASM. Don't ask me why. That's just the way I
+want it.
+
+Now, this is somewhat of a tall order for me. I really like the way I have this
+site set up at the moment and am hesitant about adding more complexity to the
+backend. I originally wanted this site to serve as an easy way for me to write
+and publish my thoughts, while at the same time maintaining a high degree of
+control. I previously had a WordPress site, but quickly gave up on it because
+the stack wasn't as lean as I wanted it and I felt pretty trapped from a
+development standpoint. So I decided to develop this site in Gatsby. The big
+selling point for me was that I could easily write posts in Markdown using my
+favorite text editor, NeoVim. If I don't enjoy the tools I'm using, I'm probably
+not going to want to write/develop as frequently, if at all. That's why I'm very
+particular about my tooling. It's purely for a sense of enjoyment. And what was
+even nicer with Gatsby is that since it is all just NPM project, I can host it
+on GitHub, and set up some CI/CD pipeline to build and deploy my site on AWS. So
+in the end of the day, all I have to do is just enjoy writing my posts in
+NeoVim, push them to my repo, and then have my site built for me without leaving
+the command line. I can't describe how awesome this set up feels. 
+
+Which is all to say, everything is perfect and I would hate to disturb the
+peace. Adding Rust to my stack would further complicate the build process. This
+site is built by AWS CodeBuild and I'm using a default container environment to
+build it. At the moment, the provided container environments don't support the
+Rust runtime, so I'm left with two options: 1) create a Docker image that has
+all the necessary prerequisites to build this site, or 2) add in the default
+container a step to download and set up the Rust runtime for every build. The
+former is the proper way to do it and the latter is the easier/hacky way.
+Downloading and installing Rust for every build would significantly increase
+build times, which I'm not into. AWS CodeBuild is pretty cheap already, but this
+set up would make me want to take a shower afterwards. At the same time, I'm
+hesitant to create a Docker image because I'm just not very skilled in doing so.
+It's very time consuming which would prolong my Game of Life implementation. But
+I guess there's really no reason for any sense of rush other than just pure
+impatience.
+
+I haven't even discussed the Rust-to-WASM compilation process, and somehow
+integrating that with Gatsby. I think a big chunk of the effort will come with
+learning how to use Webpack to package my Rust code into something that
+JavaScript can call. Even then, I'm not sure how I'd get Gatsby to process the
+WASM modules, but I'm pretty sure this is doable.
+
+Really, what would be nice is to be able to write Rust code, have it compiled as
+WASM modules, and then somehow called by React components. This doesn't sound
+really that crazy, but it's just a matter of banging my head against a wall
+enough times to get it to work.
+
+But I'm getting ahead of myself. I'm just going to get a working proof of
+concept for calling Rust-compiled WASM modules to be called from JavaScript. If
+I can do that, I feel like that's half of the battle.

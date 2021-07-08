@@ -35,6 +35,14 @@ const CodeBlock = (props) => {
   );
 };
 
+const ColoredLink = (props) => {
+  return (
+    <a {...props} target='_blank' style={{ textDecoration: 'underline' }}>
+      {props.children}
+    </a>
+  )
+};
+
 export const query = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
@@ -52,6 +60,7 @@ export const query = graphql`
 // For more information: https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#components
 const customTags = {
   pre: CodeBlock,
+  a: ColoredLink,
 }
 
 const PostTemplate = ({ data }) => {
