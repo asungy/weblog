@@ -1,12 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+// MDX support
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+// Prismjs
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
+import Prism from 'prism-react-renderer/prism';
 
 import Page from '../Page';
 import { convertDate } from "../../util/date";
+
+// Adding Rust language support
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+require('prismjs/components/prism-rust');
+require('prismjs/components/prism-toml');
 
 // Override <pre> tag to support code syntax highlighting
 const CodeBlock = (props) => {
