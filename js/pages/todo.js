@@ -7,6 +7,7 @@ const TodoPage = () => {
       <p>List of To-Do Items:</p>
       <ul>
         <li>Put links/posts on home page</li>
+        <li>Implement Conway's Game of Life in WASM</li>
         <li>Pagination (won't really matter unless I write a lot)</li>
       </ul>
 

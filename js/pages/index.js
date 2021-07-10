@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
 
-import init, { greet } from '../../pkg/weblog.js';
+import init, { hello } from '../../pkg/weblog.js';
 
-init()
-.then(() => {
-  greet("WebAssembly");
-});
 
 const IndexPage = () => {
+  const [wasmText, setWasmText] = useState('');
+
+  useEffect(() => {
+    init()
+    .then(() => {
+      setWasmText(hello("WebAssembly"));
+    });
+  });
+
   return (
     <Page pageTitle="Home">
       <p>Still developing this site. Don't mind the mess.</p>
+      <pre>{wasmText}</pre>
     </Page>
   );
 };

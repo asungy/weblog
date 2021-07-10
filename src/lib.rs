@@ -9,3 +9,8 @@ extern {
 pub fn greet(name: &str) {
     alert(&format!("Hello, {}!", name));
 }
+
+#[wasm_bindgen]
+pub fn hello(name: &str) -> String {
+    return format!("Hello, {}!", name);
+}
