@@ -1,7 +1,7 @@
 ---
 title: "Projecting WASM (Part 2): Proof of Concept"
 path: /003-projecting-wasm-pt2
-date: 07-10-2021
+date: 07-12-2021
 description: Starting slow with the simplest PoC
 ---
 I spent all last night banging my head trying to get Gatsby to play well with
@@ -127,8 +127,11 @@ After building Gatsby, the home page looks like this:
 
 Even though this looks disgustingly meta, it shows my proof of concept works.
 
-## Setting Up The Build Process
+## Update
 
-So it's nice that this works, but there's one glaring problem. I have to
-run `wasm-pack` prior to running my Gatsby build. Ideally, I would just have to
-run `gatsby build` and have my whole site built for me.
+So currently I have Game of Life implemented following [this
+guide](https://rustwasm.github.io/docs/book/game-of-life/implementing.html), but
+I can't get my site to properly run the WASM module. As far as I can
+tell, the code is correct. But for some reason, I'm getting an 'index out of
+bounds' error. I think this might have to do with the generated JS files from
+`wasm-pack`, though I'm not exactly sure why. But man, this bums me out.

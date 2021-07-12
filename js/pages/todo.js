@@ -4,11 +4,16 @@ import Page from '../components/Page';
 const TodoPage = () => {
   return (
     <Page pageTitle="To Do">
-      <p>List of To-Do Items:</p>
       <ul>
         <li>Put links/posts on home page</li>
         <li>Implement Conway's Game of Life in WASM</li>
         <li>Pagination (won't really matter unless I write a lot)</li>
+        <li>Convert pages from JS to MDX files</li>
+      </ul>
+
+      <h3>Game of Life WASM Implementation</h3>
+      <ul>
+        <li>Create Docker container for CodeBuild</li>
       </ul>
 
       <h3>Known Bugs</h3>
